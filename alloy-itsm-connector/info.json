@@ -748,8 +748,7 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
-                    "tooltip": "The Create Action ID (found in Settings App: Workflow > Actions > Create Actions)",
-                    "value": "2550"
+                    "tooltip": "The Create Action ID"
                 },
                 {
                     "title": "Summary",
@@ -861,8 +860,7 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
-                    "tooltip": "The Step Action ID (found in Settings App: Workflow > Actions > Step Actions)",
-                    "value": "2551"
+                    "tooltip": "The Step Action ID"
                 },
                 {
                     "title": "Summary",
