@@ -1,0 +1,1369 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Alloy ITSM - 1.0.0",
+      "description": "This connector is designed to manage and automate ticket-based operations. It streamlines the creation, updating, and tracking of tickets, helping improve workflow efficiency and service management.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "alloy_dev"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "30d407fe-67a5-4b18-bbb3-b9e8bab3265e",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Retrieve information about the currently logged in user/technician from Alloy Navigator Express",
+          "name": "Get Current User Profile",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3ac32d6f-d9d0-466e-b522-598de809e54d",
+          "steps": [
+            {
+              "uuid": "3ac32d6f-d9d0-466e-b522-598de809e54d",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "4a73f9d9-ffcd-4812-8b81-1907c1432f23",
+                "title": "Alloy ITSM: Get Current User Profile",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "d89c706b-4634-4f1f-9010-29d302da6b58",
+              "@type": "WorkflowStep",
+              "name": "Get Current User Profile",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "get_current_user_profile",
+                "operationTitle": "Get Current User Profile",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "02f465b1-fde8-4d64-bc62-e1ec9ae995bd",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Current User Profile",
+              "sourceStep": "/api/3/workflow_steps/3ac32d6f-d9d0-466e-b522-598de809e54d",
+              "targetStep": "/api/3/workflow_steps/d89c706b-4634-4f1f-9010-29d302da6b58"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "03842812-b9c5-490c-86d5-d7ce72c95e6d",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Retrieve information about Alloy Navigator objects of the specified object class with filtering, sorting, and pagination support",
+          "name": "Get Objects",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1618b3a9-b647-4c50-8b8b-27bc31a6336c",
+          "steps": [
+            {
+              "uuid": "1618b3a9-b647-4c50-8b8b-27bc31a6336c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "30b9f692-f47a-4b1c-9d07-bd70cb0e66e6",
+                "title": "Alloy ITSM: Get Objects",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "df7cc2f6-38f0-4775-86db-5f3fd8924f57",
+              "@type": "WorkflowStep",
+              "name": "Get Objects",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "get_objects",
+                "operationTitle": "Get Objects",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "26a7d4fc-1d48-4553-a491-d406e95a8a9b",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Objects",
+              "sourceStep": "/api/3/workflow_steps/1618b3a9-b647-4c50-8b8b-27bc31a6336c",
+              "targetStep": "/api/3/workflow_steps/df7cc2f6-38f0-4775-86db-5f3fd8924f57"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d1f95677-e000-44a4-8fab-775d06e080fc",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Retrieve Alloy Navigator objects using POST method with advanced filtering operators (=, <>, >, >=, <, <=). Supports complex queries without URL length limitations.",
+          "name": "Get Objects Advanced Search",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e1fcc509-e755-459b-8923-b2f768a39400",
+          "steps": [
+            {
+              "uuid": "e1fcc509-e755-459b-8923-b2f768a39400",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "36a1c274-0e9d-4248-b136-ad5700b45096",
+                "title": "Alloy ITSM: Get Objects Advanced Search",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "c5d0849d-d56b-44e0-8b79-4cab0e304e8c",
+              "@type": "WorkflowStep",
+              "name": "Get Objects Advanced Search",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "get_objects_advanced",
+                "operationTitle": "Get Objects Advanced Search",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "46d9a766-dccf-4ad8-acb8-d76b8dbc47da",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Objects Advanced Search",
+              "sourceStep": "/api/3/workflow_steps/e1fcc509-e755-459b-8923-b2f768a39400",
+              "targetStep": "/api/3/workflow_steps/c5d0849d-d56b-44e0-8b79-4cab0e304e8c"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d813d21b-82a0-4050-8ff4-ef91d75db83d",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Retrieve all fields of a particular object using its OID or database ID. Returns complete object information in Items array format.",
+          "name": "Get Object By ID",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/22e446b7-646b-40f9-a81b-bc3d072e5020",
+          "steps": [
+            {
+              "uuid": "22e446b7-646b-40f9-a81b-bc3d072e5020",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "8599f7c4-2b97-4eb7-8698-4e365802cd22",
+                "title": "Alloy ITSM: Get Object By ID",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "15eea08d-b6dd-4fd8-8bff-7529838a44db",
+              "@type": "WorkflowStep",
+              "name": "Get Object By ID",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "get_object_by_id",
+                "operationTitle": "Get Object By ID",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "d667b81d-1bd3-4b6c-bce6-c30b440d55fd",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Object By ID",
+              "sourceStep": "/api/3/workflow_steps/22e446b7-646b-40f9-a81b-bc3d072e5020",
+              "targetStep": "/api/3/workflow_steps/15eea08d-b6dd-4fd8-8bff-7529838a44db"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "615534fe-39d2-4819-8645-9c849f53ac89",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Retrieve activities/history for a specific Alloy Navigator object with filtering, sorting, and pagination support",
+          "name": "Get Object Activities",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b1b832e5-e15a-4ecd-8fc3-a870f1ba5e3b",
+          "steps": [
+            {
+              "uuid": "b1b832e5-e15a-4ecd-8fc3-a870f1ba5e3b",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "ecbabc88-36fa-4109-b51c-e05c357efaf7",
+                "title": "Alloy ITSM: Get Object Activities",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "c2478719-aa9f-413f-841d-145c2feda191",
+              "@type": "WorkflowStep",
+              "name": "Get Object Activities",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "get_object_activities",
+                "operationTitle": "Get Object Activities",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "6b94840d-91a4-4054-bb39-200feba34814",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Object Activities",
+              "sourceStep": "/api/3/workflow_steps/b1b832e5-e15a-4ecd-8fc3-a870f1ba5e3b",
+              "targetStep": "/api/3/workflow_steps/c2478719-aa9f-413f-841d-145c2feda191"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9e03e2a7-683e-4feb-bc1f-6c5ea6a04c0a",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Retrieve object activities using POST method with advanced filtering operators (=, <>, >, >=, <, <=). Supports complex queries without URL length limitations.",
+          "name": "Get Object Activities Advanced Search",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b2ea79de-8b88-4e62-9de1-ad5f1c9f4e1e",
+          "steps": [
+            {
+              "uuid": "b2ea79de-8b88-4e62-9de1-ad5f1c9f4e1e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "fda6b6cb-8c30-48e8-a5bb-dc40575905f5",
+                "title": "Alloy ITSM: Get Object Activities Advanced Search",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "d62d59b6-af7d-47bb-b549-ac0edd8a4e6f",
+              "@type": "WorkflowStep",
+              "name": "Get Object Activities Advanced Search",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "get_object_activities_advanced",
+                "operationTitle": "Get Object Activities Advanced Search",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "deb7a67b-0b15-4d4b-92e3-f0e641fe3e15",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Object Activities Advanced Search",
+              "sourceStep": "/api/3/workflow_steps/b2ea79de-8b88-4e62-9de1-ad5f1c9f4e1e",
+              "targetStep": "/api/3/workflow_steps/d62d59b6-af7d-47bb-b549-ac0edd8a4e6f"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "6a074591-fc3f-4154-8933-bb43b5b29df5",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Retrieve classification/dictionary values for Alloy Navigator objects (e.g., Status values, Types, Priorities). Useful for getting dropdown options and reference field values.",
+          "name": "Get Classification Values",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/bcfc6963-9929-4a05-950e-779d3535544a",
+          "steps": [
+            {
+              "uuid": "bcfc6963-9929-4a05-950e-779d3535544a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "c7d13cd1-3eb3-4c0f-8f12-434627944ead",
+                "title": "Alloy ITSM: Get Classification Values",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "78c495dd-29dd-463c-a717-247b05a3af86",
+              "@type": "WorkflowStep",
+              "name": "Get Classification Values",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "get_classification_values",
+                "operationTitle": "Get Classification Values",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "169b3821-fe9f-40b7-8906-051baa587e18",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Classification Values",
+              "sourceStep": "/api/3/workflow_steps/bcfc6963-9929-4a05-950e-779d3535544a",
+              "targetStep": "/api/3/workflow_steps/78c495dd-29dd-463c-a717-247b05a3af86"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "744811f5-ddd5-49b8-b1a7-0611f143103d",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Retrieve classification/dictionary values using POST method with advanced filtering operators (=, <>, >, >=, <, <=). Supports complex queries without URL length limitations.",
+          "name": "Get Classification Values Advanced Search",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/8e79f676-1a93-415b-b9c0-5a084e2d934a",
+          "steps": [
+            {
+              "uuid": "8e79f676-1a93-415b-b9c0-5a084e2d934a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "0a910c59-054f-4eed-b9c2-e63b1adf8edd",
+                "title": "Alloy ITSM: Get Classification Values Advanced Search",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "a3473072-44ad-42a8-8e02-7b3d179f1aca",
+              "@type": "WorkflowStep",
+              "name": "Get Classification Values Advanced Search",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "get_classification_values_advanced",
+                "operationTitle": "Get Classification Values Advanced Search",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "16cf5a1d-b1d3-4cf3-be05-52d5f832bb7d",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Classification Values Advanced Search",
+              "sourceStep": "/api/3/workflow_steps/8e79f676-1a93-415b-b9c0-5a084e2d934a",
+              "targetStep": "/api/3/workflow_steps/a3473072-44ad-42a8-8e02-7b3d179f1aca"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "2e91b4ca-7566-4481-9471-341a383e3b25",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Create a new Alloy Navigator object record via workflow Create Action. Does not support Service Requests (use Submit Request action for Service Catalog Items).",
+          "name": "Create Object",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/69fa5ac7-6579-40a3-bfbb-a4c2e54579f1",
+          "steps": [
+            {
+              "uuid": "69fa5ac7-6579-40a3-bfbb-a4c2e54579f1",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "dd0e817c-a34c-499a-823b-bde0c75d16b6",
+                "title": "Alloy ITSM: Create Object",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "8714ae6a-5e1f-482f-b1b3-cea8c496a30c",
+              "@type": "WorkflowStep",
+              "name": "Create Object",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": {
+                  "action_id": "2550"
+                },
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "create_object",
+                "operationTitle": "Create Object",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "42bcbe7a-6ec6-4bb9-aa7c-aec873f860ca",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Object",
+              "sourceStep": "/api/3/workflow_steps/69fa5ac7-6579-40a3-bfbb-a4c2e54579f1",
+              "targetStep": "/api/3/workflow_steps/8714ae6a-5e1f-482f-b1b3-cea8c496a30c"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "60f32a0e-e457-49ed-9f1d-81925465ab7f",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Run a workflow Step Action on an Alloy Navigator object to update fields or trigger workflows. Cannot be used for Software Catalog and Stock Room objects.",
+          "name": "Update Object",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/066205d6-3949-4a00-aeb2-d182ae7fae2d",
+          "steps": [
+            {
+              "uuid": "066205d6-3949-4a00-aeb2-d182ae7fae2d",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "100c2f7d-13ab-4f0d-8fda-86b92079899e",
+                "title": "Alloy ITSM: Update Object",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "e5db4b29-d4cb-476c-9f09-f8581570fb61",
+              "@type": "WorkflowStep",
+              "name": "Update Object",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": {
+                  "action_id": "2551"
+                },
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "run_step_action",
+                "operationTitle": "Update Object",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "04c0223e-b15f-4961-bc9c-8786246ad4ec",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Object",
+              "sourceStep": "/api/3/workflow_steps/066205d6-3949-4a00-aeb2-d182ae7fae2d",
+              "targetStep": "/api/3/workflow_steps/e5db4b29-d4cb-476c-9f09-f8581570fb61"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f4f86a6c-92c5-4d13-9823-57b4b93ef6ee",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Check if a workflow Step Action is available for a specific object. Action availability depends on object type, status, security roles, and other criteria.",
+          "name": "Check Step Action Availability",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/9bf921b2-91a9-4caf-b28f-ba0b94229e51",
+          "steps": [
+            {
+              "uuid": "9bf921b2-91a9-4caf-b28f-ba0b94229e51",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "4f029138-6581-4617-8b74-d3ce2a939bd6",
+                "title": "Alloy ITSM: Check Step Action Availability",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "50eece31-f1a8-44ff-ba58-38529b9e39a7",
+              "@type": "WorkflowStep",
+              "name": "Check Step Action Availability",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "check_step_action_availability",
+                "operationTitle": "Check Step Action Availability",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "0f631441-2221-429b-ae02-9d6889e7485f",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Check Step Action Availability",
+              "sourceStep": "/api/3/workflow_steps/9bf921b2-91a9-4caf-b28f-ba0b94229e51",
+              "targetStep": "/api/3/workflow_steps/50eece31-f1a8-44ff-ba58-38529b9e39a7"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ec1c6f4c-8e68-42b2-b00f-164a99ee7c80",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Retrieve a list of attachments for a specific Alloy Navigator object with filtering, sorting, and pagination support",
+          "name": "List Object Attachments",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/283c31a8-69d7-4585-b93c-70564ea131d6",
+          "steps": [
+            {
+              "uuid": "283c31a8-69d7-4585-b93c-70564ea131d6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "0918f977-45da-4bc7-b6fd-45405eb297df",
+                "title": "Alloy ITSM: List Object Attachments",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "e5af6f4e-bff8-4cd8-9fcc-91a7f4cd4085",
+              "@type": "WorkflowStep",
+              "name": "List Object Attachments",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "list_object_attachments",
+                "operationTitle": "List Object Attachments",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "ea7def29-bf40-4c48-8c6f-4344ba777767",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> List Object Attachments",
+              "sourceStep": "/api/3/workflow_steps/283c31a8-69d7-4585-b93c-70564ea131d6",
+              "targetStep": "/api/3/workflow_steps/e5af6f4e-bff8-4cd8-9fcc-91a7f4cd4085"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "e06de413-4b51-4359-9831-49159bc7256f",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Get the base64 encoded contents of a specific object attachment",
+          "name": "Get Attachment Content",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/7853f114-131f-4912-9760-ebfde5bf9658",
+          "steps": [
+            {
+              "uuid": "7853f114-131f-4912-9760-ebfde5bf9658",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "3719d785-11c2-45a7-87c8-600270711103",
+                "title": "Alloy ITSM: Get Attachment Content",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "87336a67-bd18-4581-a3a7-63793e830218",
+              "@type": "WorkflowStep",
+              "name": "Get Attachment Content",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "get_attachment_content",
+                "operationTitle": "Get Attachment Content",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "590c9f20-1f4d-46c3-86e4-47f266d1efd3",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Attachment Content",
+              "sourceStep": "/api/3/workflow_steps/7853f114-131f-4912-9760-ebfde5bf9658",
+              "targetStep": "/api/3/workflow_steps/87336a67-bd18-4581-a3a7-63793e830218"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "2e74b762-6e0b-4657-85c6-f9f4f68c8702",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Download a specific object attachment as binary data (base64 encoded for transport)",
+          "name": "Download Attachment",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f014e1aa-f0ed-403c-9a3c-541d4a0519b6",
+          "steps": [
+            {
+              "uuid": "f014e1aa-f0ed-403c-9a3c-541d4a0519b6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "e3d1ed3e-1ddb-47d7-9e38-c18f2933f0cc",
+                "title": "Alloy ITSM: Download Attachment",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "845de537-3953-4402-a483-56276b747705",
+              "@type": "WorkflowStep",
+              "name": "Download Attachment",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": {
+                  "skip_fortisoar_upload": false
+                },
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "download_attachment",
+                "operationTitle": "Download Attachment",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "37f9e603-51a8-4b4c-8c51-4d41345458d0",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Download Attachment",
+              "sourceStep": "/api/3/workflow_steps/f014e1aa-f0ed-403c-9a3c-541d4a0519b6",
+              "targetStep": "/api/3/workflow_steps/845de537-3953-4402-a483-56276b747705"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "8694781e-932e-47a5-8de0-856f00470b04",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Add file attachments or links from FortiSOAR to a specific Alloy Navigator object using its OID.",
+          "name": "Add Attachments",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f978b13a-158f-4e81-81bc-df608cc8e58b",
+          "steps": [
+            {
+              "uuid": "f978b13a-158f-4e81-81bc-df608cc8e58b",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "eb203f78-2962-4431-88ce-6ba8f5484c39",
+                "title": "Alloy ITSM: Add Attachments",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "841f1448-1897-4015-9ce6-859aa7f7f8bf",
+              "@type": "WorkflowStep",
+              "name": "Add Attachments",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": {
+                  "path": "Attachment IRI"
+                },
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "add_attachments",
+                "operationTitle": "Add Attachments",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "c83cb929-78bd-4d50-8e2c-a595488dbf72",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add Attachments",
+              "sourceStep": "/api/3/workflow_steps/f978b13a-158f-4e81-81bc-df608cc8e58b",
+              "targetStep": "/api/3/workflow_steps/841f1448-1897-4015-9ce6-859aa7f7f8bf"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "286b8a52-d6f4-476d-924f-2bd9a7e7e7c4",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Remove a specific attachment from an Alloy Navigator object",
+          "name": "Remove Attachment",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1e969cb6-ccd9-4c51-9b83-6b670ed02689",
+          "steps": [
+            {
+              "uuid": "1e969cb6-ccd9-4c51-9b83-6b670ed02689",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "8448f4c4-4c6d-41d8-aa7f-9b3ac24abdac",
+                "title": "Alloy ITSM: Remove Attachment",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "2365c586-160b-4456-843f-57cc247cc581",
+              "@type": "WorkflowStep",
+              "name": "Remove Attachment",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "remove_attachment",
+                "operationTitle": "Remove Attachment",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "eab1dabc-bfe2-4f66-9bae-cc51a751262b",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Remove Attachment",
+              "sourceStep": "/api/3/workflow_steps/1e969cb6-ccd9-4c51-9b83-6b670ed02689",
+              "targetStep": "/api/3/workflow_steps/2365c586-160b-4456-843f-57cc247cc581"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "346b2a09-c66d-4b82-a241-aafe1247a04a",
+          "collection": "/api/3/workflow_collections/59ae856d-48c5-4688-8c52-89e2a7d0bbc0",
+          "triggerLimit": null,
+          "description": "Update the description of a specific object attachment",
+          "name": "Update Attachment Description",
+          "tag": "#Alloy ITSM",
+          "recordTags": [
+            "alloy_dev"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/d3937bcf-b68f-423d-bf4b-1d83cf90016f",
+          "steps": [
+            {
+              "uuid": "d3937bcf-b68f-423d-bf4b-1d83cf90016f",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "87aeb788-0328-43b0-943b-faee78ff3c7b",
+                "title": "Alloy ITSM: Update Attachment Description",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "9768899d-977d-4986-bf11-6d14afc8c0eb",
+              "@type": "WorkflowStep",
+              "name": "Update Attachment Description",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Alloy ITSM",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "alloy_dev",
+                "operation": "update_attachment_description",
+                "operationTitle": "Update Attachment Description",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "1e44ca0c-2743-4fa4-bfba-6e3850e9c5bf",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Attachment Description",
+              "sourceStep": "/api/3/workflow_steps/d3937bcf-b68f-423d-bf4b-1d83cf90016f",
+              "targetStep": "/api/3/workflow_steps/9768899d-977d-4986-bf11-6d14afc8c0eb"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
