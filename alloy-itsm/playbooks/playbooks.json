@@ -10,7 +10,7 @@
       "image": null,
       "recordTags": [
         "Alloy Software",
-        "alloy_itsm"
+        "alloy-itsm"
       ],
       "workflows": [
         {
@@ -22,7 +22,7 @@
           "name": "Get Current User Profile",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -68,7 +68,7 @@
                 "config": "''",
                 "params": [],
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "get_current_user_profile",
                 "operationTitle": "Get Current User Profile",
                 "step_variables": {
@@ -101,7 +101,7 @@
           "name": "Get Objects",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -147,7 +147,7 @@
                 "config": "''",
                 "params": [],
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "get_objects",
                 "operationTitle": "Get Objects",
                 "step_variables": {
@@ -180,7 +180,7 @@
           "name": "Get Objects Advanced Search",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -226,7 +226,7 @@
                 "config": "''",
                 "params": [],
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "get_objects_advanced",
                 "operationTitle": "Get Objects Advanced Search",
                 "step_variables": {
@@ -259,7 +259,7 @@
           "name": "Get Object By ID",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -305,7 +305,7 @@
                 "config": "''",
                 "params": [],
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "get_object_by_id",
                 "operationTitle": "Get Object By ID",
                 "step_variables": {
@@ -338,7 +338,7 @@
           "name": "Get Object Activities",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -384,7 +384,7 @@
                 "config": "''",
                 "params": [],
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "get_object_activities",
                 "operationTitle": "Get Object Activities",
                 "step_variables": {
@@ -417,7 +417,7 @@
           "name": "Get Object Activities Advanced Search",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -463,7 +463,7 @@
                 "config": "''",
                 "params": [],
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "get_object_activities_advanced",
                 "operationTitle": "Get Object Activities Advanced Search",
                 "step_variables": {
@@ -496,7 +496,7 @@
           "name": "Get Classification Values",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -542,7 +542,7 @@
                 "config": "''",
                 "params": [],
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "get_classification_values",
                 "operationTitle": "Get Classification Values",
                 "step_variables": {
@@ -575,7 +575,7 @@
           "name": "Get Classification Values Advanced Search",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -621,7 +621,7 @@
                 "config": "''",
                 "params": [],
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "get_classification_values_advanced",
                 "operationTitle": "Get Classification Values Advanced Search",
                 "step_variables": {
@@ -654,7 +654,7 @@
           "name": "Create Object",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -702,7 +702,7 @@
                   "action_id": "2550"
                 },
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "create_object",
                 "operationTitle": "Create Object",
                 "step_variables": {
@@ -735,7 +735,7 @@
           "name": "Update Object",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -783,7 +783,7 @@
                   "action_id": "2551"
                 },
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "run_step_action",
                 "operationTitle": "Update Object",
                 "step_variables": {
@@ -816,7 +816,7 @@
           "name": "Check Step Action Availability",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -862,7 +862,7 @@
                 "config": "''",
                 "params": [],
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "check_step_action_availability",
                 "operationTitle": "Check Step Action Availability",
                 "step_variables": {
@@ -895,7 +895,7 @@
           "name": "List Object Attachments",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -941,7 +941,7 @@
                 "config": "''",
                 "params": [],
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "list_object_attachments",
                 "operationTitle": "List Object Attachments",
                 "step_variables": {
@@ -974,7 +974,7 @@
           "name": "Get Attachment Content",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -1020,7 +1020,7 @@
                 "config": "''",
                 "params": [],
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "get_attachment_content",
                 "operationTitle": "Get Attachment Content",
                 "step_variables": {
@@ -1053,7 +1053,7 @@
           "name": "Download Attachment",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -1101,7 +1101,7 @@
                   "skip_fortisoar_upload": false
                 },
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "download_attachment",
                 "operationTitle": "Download Attachment",
                 "step_variables": {
@@ -1134,7 +1134,7 @@
           "name": "Add Attachments",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -1182,7 +1182,7 @@
                   "path": "Attachment IRI"
                 },
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "add_attachments",
                 "operationTitle": "Add Attachments",
                 "step_variables": {
@@ -1215,7 +1215,7 @@
           "name": "Remove Attachment",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -1261,7 +1261,7 @@
                 "config": "''",
                 "params": [],
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "remove_attachment",
                 "operationTitle": "Remove Attachment",
                 "step_variables": {
@@ -1294,7 +1294,7 @@
           "name": "Update Attachment Description",
           "tag": "#Alloy ITSM",
           "recordTags": [
-            "alloy_itsm"
+            "alloy-itsm"
           ],
           "isActive": false,
           "debug": false,
@@ -1340,7 +1340,7 @@
                 "config": "''",
                 "params": [],
                 "version": "1.0.0",
-                "connector": "alloy_itsm",
+                "connector": "alloy-itsm",
                 "operation": "update_attachment_description",
                 "operationTitle": "Update Attachment Description",
                 "step_variables": {
