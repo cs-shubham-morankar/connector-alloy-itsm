@@ -5,7 +5,7 @@ Copyright (c) 2025 Fortinet Inc
 Copyright end
 """
 
-LOGGER_NAME = 'alloy_itsm'
+LOGGER_NAME = 'alloy-itsm'
 
 # API Endpoints
 ENDPOINTS = {

@@ -1,5 +1,5 @@
 {
-  "name": "alloy_itsm",
+  "name": "alloy-itsm",
   "version": "1.0.0",
   "label": "Alloy ITSM",
   "description": "Alloy ITSM is an IT Service Management (ITSM) solution designed to help organizations manage and streamline their IT services and operations. This connector is designed to manage and automate ticket-based operations.",
