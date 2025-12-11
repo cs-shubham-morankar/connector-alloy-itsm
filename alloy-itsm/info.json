@@ -185,24 +185,44 @@
           "tooltip": "Provide additional filtering criteria as a JSON object to refine the object search. (e.g., {\"Priority\":\"High\",\"Status\":\"Open\"})"
         },
         {
-          "title": "Sort Ascending",
-          "description": "Specify the comma-separated fields to be used for ascending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter.",
-          "type": "text",
-          "name": "par_sort_asc",
+          "title": "Sort By",
+          "description": "Select the sorting direction. You may use only one parameter either \"Sort Ascending\" or \"Sort Descending\" parameter.",
+          "type": "select",
+          "name": "sort_by",
           "required": false,
           "visible": true,
           "editable": true,
-          "tooltip": "Specify the comma-separated fields to be used for ascending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter."
-        },
-        {
-          "title": "Sort Descending",
-          "description": "Specify the comma-separated fields to be used for descending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter.",
-          "type": "text",
-          "name": "par_sort_desc",
-          "required": false,
-          "visible": true,
-          "editable": true,
-          "tooltip": "Specify the comma-separated fields to be used for descending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter."
+          "tooltip": "Select the sorting direction. You may use only one parameter either \"Sort Ascending\" or \"Sort Descending\" parameter.",
+          "select": [
+            "Sort Ascending",
+            "Sort Descending"
+          ],
+          "options": {
+            "Sort Ascending": [
+              {
+                "title": "Sort Ascending",
+                "description": "Specify the comma-separated fields to be used for ascending sorting.",
+                "type": "text",
+                "name": "par_sort_asc",
+                "required": false,
+                "visible": true,
+                "editable": true,
+                "tooltip": "Specify the comma-separated fields to be used for ascending sorting."
+              }
+            ],
+            "Sort Descending": [
+              {
+                "title": "Sort Descending",
+                "description": "Specify the comma-separated fields to be used for descending sorting.",
+                "type": "text",
+                "name": "par_sort_desc",
+                "required": false,
+                "visible": true,
+                "editable": true,
+                "tooltip": "Specify the comma-separated fields to be used for descending sorting."
+              }
+            ]
+          }
         },
         {
           "title": "Limit",
@@ -408,24 +428,44 @@
           "tooltip": "Provide additional filtering criteria as a JSON object to refine the object search. For e.g., {\"Activity\":\"New Technical Issue was created\"}"
         },
         {
-          "title": "Sort Ascending",
-          "description": "Specify the comma-separated fields to be used for ascending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter.",
-          "type": "text",
-          "name": "par_sort_asc",
+          "title": "Sort By",
+          "description": "Select the sorting direction. You may use only one parameter either \"Sort Ascending\" or \"Sort Descending\" parameter.",
+          "type": "select",
+          "name": "sort_by",
           "required": false,
           "visible": true,
           "editable": true,
-          "tooltip": "Specify the comma-separated fields to be used for ascending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter."
-        },
-        {
-          "title": "Sort Descending",
-          "description": "Specify the comma-separated fields to be used for descending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter.",
-          "type": "text",
-          "name": "par_sort_desc",
-          "required": false,
-          "visible": true,
-          "editable": true,
-          "tooltip": "Specify the comma-separated fields to be used for descending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter."
+          "tooltip": "Select the sorting direction. You may use only one parameter either \"Sort Ascending\" or \"Sort Descending\" parameter.",
+          "select": [
+            "Sort Ascending",
+            "Sort Descending"
+          ],
+          "options": {
+            "Sort Ascending": [
+              {
+                "title": "Sort Ascending",
+                "description": "Specify the comma-separated fields to be used for ascending sorting.",
+                "type": "text",
+                "name": "par_sort_asc",
+                "required": false,
+                "visible": true,
+                "editable": true,
+                "tooltip": "Specify the comma-separated fields to be used for ascending sorting."
+              }
+            ],
+            "Sort Descending": [
+              {
+                "title": "Sort Descending",
+                "description": "Specify the comma-separated fields to be used for descending sorting.",
+                "type": "text",
+                "name": "par_sort_desc",
+                "required": false,
+                "visible": true,
+                "editable": true,
+                "tooltip": "Specify the comma-separated fields to be used for descending sorting."
+              }
+            ]
+          }
         },
         {
           "title": "Limit",
@@ -465,7 +505,7 @@
     },
     {
       "operation": "get_object_activities_advanced",
-      "title": "Get Object Activities Advanced Search",
+      "title": "Advanced Search for Object Activities",
       "description": "Retrieve object activities using POST method with advanced filtering operators (=, <>, >, >=, <, <=). Supports complex queries without URL length limitations.",
       "category": "investigation",
       "annotation": "get_object_activities_advanced",
@@ -599,24 +639,44 @@
           "placeholder": "For e.g. Rank,Status,Description, etc."
         },
         {
-          "title": "Sort Ascending",
-          "description": "Specify the comma-separated fields to be used for ascending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter.",
-          "type": "text",
-          "name": "par_sort_asc",
+          "title": "Sort By",
+          "description": "Select the sorting direction. You may use only one parameter either \"Sort Ascending\" or \"Sort Descending\" parameter.",
+          "type": "select",
+          "name": "sort_by",
           "required": false,
           "visible": true,
           "editable": true,
-          "tooltip": "Specify the comma-separated fields to be used for ascending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter."
-        },
-        {
-          "title": "Sort Descending",
-          "description": "Specify the comma-separated fields to be used for descending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter.",
-          "type": "text",
-          "name": "par_sort_desc",
-          "required": false,
-          "visible": true,
-          "editable": true,
-          "tooltip": "Specify the comma-separated fields to be used for descending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter."
+          "tooltip": "Select the sorting direction. You may use only one parameter either \"Sort Ascending\" or \"Sort Descending\" parameter.",
+          "select": [
+            "Sort Ascending",
+            "Sort Descending"
+          ],
+          "options": {
+            "Sort Ascending": [
+              {
+                "title": "Sort Ascending",
+                "description": "Specify the comma-separated fields to be used for ascending sorting.",
+                "type": "text",
+                "name": "par_sort_asc",
+                "required": false,
+                "visible": true,
+                "editable": true,
+                "tooltip": "Specify the comma-separated fields to be used for ascending sorting."
+              }
+            ],
+            "Sort Descending": [
+              {
+                "title": "Sort Descending",
+                "description": "Specify the comma-separated fields to be used for descending sorting.",
+                "type": "text",
+                "name": "par_sort_desc",
+                "required": false,
+                "visible": true,
+                "editable": true,
+                "tooltip": "Specify the comma-separated fields to be used for descending sorting."
+              }
+            ]
+          }
         },
         {
           "title": "Limit",
@@ -656,7 +716,7 @@
     },
     {
       "operation": "get_classification_values_advanced",
-      "title": "Get Classification Values Advanced Search",
+      "title": "Advanced Search for Classification Values",
       "description": "Retrieve classification/dictionary values using POST method with advanced filtering operators (=, <>, >, >=, <, <=). Supports complex queries without URL length limitations.",
       "category": "investigation",
       "annotation": "get_classification_values_advanced",
@@ -1060,24 +1120,44 @@
           "tooltip": "Provide additional filtering criteria as a JSON object to refine the object attachment. For e.g., {\"Type\":\"File\"})"
         },
         {
-          "title": "Sort Ascending",
-          "description": "Specify the comma-separated fields to be used for ascending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter.",
-          "type": "text",
-          "name": "par_sort_asc",
+          "title": "Sort By",
+          "description": "Select the sorting direction. You may use only one parameter either \"Sort Ascending\" or \"Sort Descending\" parameter.",
+          "type": "select",
+          "name": "sort_by",
           "required": false,
           "visible": true,
           "editable": true,
-          "tooltip": "Specify the comma-separated fields to be used for ascending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter."
-        },
-        {
-          "title": "Sort Descending",
-          "description": "Specify the comma-separated fields to be used for descending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter.",
-          "type": "text",
-          "name": "par_sort_desc",
-          "required": false,
-          "visible": true,
-          "editable": true,
-          "tooltip": "Specify the comma-separated fields to be used for descending sorting. Only one sorting direction is permitted, either \"Sort Ascending\" or \"Sort Descending\" parameter."
+          "tooltip": "Select the sorting direction. You may use only one parameter either \"Sort Ascending\" or \"Sort Descending\" parameter.",
+          "select": [
+            "Sort Ascending",
+            "Sort Descending"
+          ],
+          "options": {
+            "Sort Ascending": [
+              {
+                "title": "Sort Ascending",
+                "description": "Specify the comma-separated fields to be used for ascending sorting.",
+                "type": "text",
+                "name": "par_sort_asc",
+                "required": false,
+                "visible": true,
+                "editable": true,
+                "tooltip": "Specify the comma-separated fields to be used for ascending sorting."
+              }
+            ],
+            "Sort Descending": [
+              {
+                "title": "Sort Descending",
+                "description": "Specify the comma-separated fields to be used for descending sorting.",
+                "type": "text",
+                "name": "par_sort_desc",
+                "required": false,
+                "visible": true,
+                "editable": true,
+                "tooltip": "Specify the comma-separated fields to be used for descending sorting."
+              }
+            ]
+          }
         },
         {
           "title": "Limit",
