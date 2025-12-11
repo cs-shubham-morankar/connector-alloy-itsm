@@ -8,15 +8,15 @@ services and operations. This connector is designed to manage and automate ticke
 
 Connector Version: 1.0.0
 
-Authored By: Fortinet
-
 Contributor: amey-spryiq
+
+Authored By: Fortinet
 
 Certified: No
 
 ## Installing the connector
 
-<p>Use the <strong>Connector Store</strong> to install the connector. For the detailed procedure to install a connector, click <a href="https://docs.fortinet.com/document/fortisoar/0.0.0/installing-a-connector/1/installing-a-connector" target="_top">here</a>.<br>You can also use the following <code>yum</code> command to install connectors from an SSH session:</p>
+<p>Use the <strong>Connector Store</strong> to install the connector. For the detailed procedure to install a connector, click <a href="https://docs.fortinet.com/document/fortisoar/0.0.0/installing-a-connector/1/installing-a-connector" target="_top">here</a>.<br>You can also use the following <code>yum</code> command user to install connectors from an SSH session:</p>
 
 ```
 sudo yum install cyops-connector-alloy-itsm
@@ -54,9 +54,9 @@ operations:
 <tr><td>Get Objects Advanced Search<br></td><td>Retrieve Alloy Navigator objects using advanced filtering operators. Supports complex queries without URL length restrictions.<br></td><td>get_objects_advanced <br/>Investigation<br></td></tr>
 <tr><td>Get Object By ID<br></td><td>Retrieve all fields of a specific object by using its OID or database ID.<br></td><td>get_object_by_id <br/>Investigation<br></td></tr>
 <tr><td>Get Object Activities<br></td><td>Retrieve the activity or history records for a specific Alloy Navigator object using the filter parameters you provide.<br></td><td>get_object_activities <br/>Investigation<br></td></tr>
-<tr><td>Get Object Activities Advanced Search<br></td><td>Retrieve object activities using POST method with advanced filtering operators (=, <>, >, >=, <, <=). Supports complex queries without URL length limitations.<br></td><td>get_object_activities_advanced <br/>Investigation<br></td></tr>
+<tr><td>Advanced Search for Object Activities<br></td><td>Retrieve object activities using POST method with advanced filtering operators (=, <>, >, >=, <, <=). Supports complex queries without URL length limitations.<br></td><td>get_object_activities_advanced <br/>Investigation<br></td></tr>
 <tr><td>Get Classification Values<br></td><td>Retrieve classification or dictionary values for Alloy Navigator objects using the filter parameters you’ve provided.<br></td><td>get_classification_values <br/>Investigation<br></td></tr>
-<tr><td>Get Classification Values Advanced Search<br></td><td>Retrieve classification/dictionary values using POST method with advanced filtering operators (=, <>, >, >=, <, <=). Supports complex queries without URL length limitations.<br></td><td>get_classification_values_advanced <br/>Investigation<br></td></tr>
+<tr><td>Advanced Search for Classification Values<br></td><td>Retrieve classification/dictionary values using POST method with advanced filtering operators (=, <>, >, >=, <, <=). Supports complex queries without URL length limitations.<br></td><td>get_classification_values_advanced <br/>Investigation<br></td></tr>
 <tr><td>Create Object<br></td><td>Creates a new Alloy Navigator object record using a workflow Create Action. This action is not supported for Service Requests; use the Submit Request action for Service Catalog Items instead.<br></td><td>create_object <br/>Investigation<br></td></tr>
 <tr><td>Update Object<br></td><td>Run a workflow Step Action on an Alloy Navigator object to update fields or trigger workflows. Cannot be used for Software Catalog and Stock Room objects.<br></td><td>run_step_action <br/>Investigation<br></td></tr>
 <tr><td>Check Step Action Availability<br></td><td>Check whether the workflow Step Action is available for the object according to the parameter you have entered.<br></td><td>check_step_action_availability <br/>Investigation<br></td></tr>
@@ -114,9 +114,9 @@ The output contains the following populated JSON schema:
 </td></tr><tr><td>Fields<br></td><td>Specify a comma-separated list of field names to include in the output. If omitted, all available fields will be returned.<br>
 </td></tr><tr><td>Search Text<br></td><td>Specify the search string used to filter the retrieved objects. Partial text fragments or keywords are allowed. Note: The search is performed on commonly used text fields that store key information, and each object class has its own set of these fields. For details: https://docs.alloysoftware.com/alloynavigatorexpress/help/webportal/content/common-functions/search/frequently-used-text-fields.htm<br>
 </td></tr><tr><td>Filters<br></td><td>Provide additional filtering criteria as a JSON object to refine the object search.<br>
-</td></tr><tr><td>Sort Ascending<br></td><td>Specify the comma-separated fields to be used for ascending sorting. Only one sorting direction is permitted, either "Sort Ascending" or "Sort Descending" parameter.<br>
-</td></tr><tr><td>Sort Descending<br></td><td>Specify the comma-separated fields to be used for descending sorting. Only one sorting direction is permitted, either "Sort Ascending" or "Sort Descending" parameter.<br>
-</td></tr><tr><td>Limit<br></td><td>Specifies how many records should be returned. Use with the "Offset" parameter to enable pagination.<br>
+</td></tr><tr><td>Sort By<br></td><td>Select the sorting direction. You may use only one parameter either "Sort Ascending" or "Sort Descending" parameter.<br>
+<strong>If you choose 'Sort Ascending'</strong><ul><li>Sort Ascending: Specify the comma-separated fields to be used for ascending sorting.</li></ul><strong>If you choose 'Sort Descending'</strong><ul><li>Sort Descending: Specify the comma-separated fields to be used for descending sorting.</li></ul></td></tr></td></tr>
+<tr><td>Limit<br></td><td>Specifies how many records should be returned. Use with the "Offset" parameter to enable pagination.<br>
 </td></tr><tr><td>Offset<br></td><td>Specifies how many records to omit before returning data. Should be paired with the "Limit" parameter for pagination.<br>
 </td></tr></tbody></table>
 
@@ -185,6 +185,7 @@ The output contains the following populated JSON schema:
 #### Output
 
 The output contains the following populated JSON schema:
+
 ```
 {
     "success": "",
@@ -209,15 +210,16 @@ The output contains the following populated JSON schema:
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Object Identifier (OID)<br></td><td>Specify the object identifier to retrieve object activities details from Alloy Navigator Express. Object identifier (e.g., T000027 for incidents, COMP000123 for computers)<br>
 </td></tr><tr><td>Activity Fields<br></td><td>Provide a comma-separated list of activity field names to include in the output. If omitted, all available fields will be returned. For e.g., Num,Details,Activity,Created_Date<br>
 </td></tr><tr><td>Filters<br></td><td>Provide additional filtering criteria as a JSON object to refine the object search. For e.g., {"Activity":"New Technical Issue was created"}<br>
-</td></tr><tr><td>Sort Ascending<br></td><td>Specify the comma-separated fields to be used for ascending sorting. Only one sorting direction is permitted, either "Sort Ascending" or "Sort Descending" parameter.<br>
-</td></tr><tr><td>Sort Descending<br></td><td>Specify the comma-separated fields to be used for descending sorting. Only one sorting direction is permitted, either "Sort Ascending" or "Sort Descending" parameter.<br>
-</td></tr><tr><td>Limit<br></td><td>Specifies how many records should be returned. Use with the "Offset" parameter to enable pagination.<br>
+</td></tr><tr><td>Sort By<br></td><td>Select the sorting direction. You may use only one parameter either "Sort Ascending" or "Sort Descending" parameter.<br>
+<strong>If you choose 'Sort Ascending'</strong><ul><li>Sort Ascending: Specify the comma-separated fields to be used for ascending sorting.</li></ul><strong>If you choose 'Sort Descending'</strong><ul><li>Sort Descending: Specify the comma-separated fields to be used for descending sorting.</li></ul></td></tr></td></tr>
+<tr><td>Limit<br></td><td>Specifies how many records should be returned. Use with the "Offset" parameter to enable pagination.<br>
 </td></tr><tr><td>Offset<br></td><td>Specifies how many records to omit before returning data. Should be paired with the "Limit" parameter for pagination.<br>
 </td></tr></tbody></table>
 
 #### Output
 
 The output contains the following populated JSON schema:
+
 ```
 {
     "success": "",
@@ -235,7 +237,7 @@ The output contains the following populated JSON schema:
 }
 ```
 
-### operation: Get Object Activities Advanced Search
+### operation: Advanced Search for Object Activities
 
 #### Input parameters
 
@@ -249,8 +251,8 @@ The output contains the following populated JSON schema:
 
 #### Output
 
-The output contains the following populated JSON schema:
 ```
+The output contains the following populated JSON schema:
 {
     "success": "",
     "errorCode": "",
@@ -275,15 +277,16 @@ The output contains the following populated JSON schema:
 </td></tr><tr><td>Reference Field<br></td><td>Specify a comma-separated list of reference field names to include in the output. For e.g. Status, Types, Priority, Category<br>
 </td></tr><tr><td>Filters<br></td><td>Provide additional filtering criteria as a JSON object to refine the classification values. (e.g., {"Rank":"3"})<br>
 </td></tr><tr><td>Fields<br></td><td>Specify a comma-separated list of field names to include in the output. If omitted, all available fields will be returned. For e.g., Rank,Status,Description, etc.<br>
-</td></tr><tr><td>Sort Ascending<br></td><td>Specify the comma-separated fields to be used for ascending sorting. Only one sorting direction is permitted, either "Sort Ascending" or "Sort Descending" parameter.<br>
-</td></tr><tr><td>Sort Descending<br></td><td>Specify the comma-separated fields to be used for descending sorting. Only one sorting direction is permitted, either "Sort Ascending" or "Sort Descending" parameter.<br>
-</td></tr><tr><td>Limit<br></td><td>Specifies how many records to omit before returning data. Should be paired with the "Limit" parameter for pagination.<br>
+</td></tr><tr><td>Sort By<br></td><td>Select the sorting direction. You may use only one parameter either "Sort Ascending" or "Sort Descending" parameter.<br>
+<strong>If you choose 'Sort Ascending'</strong><ul><li>Sort Ascending: Specify the comma-separated fields to be used for ascending sorting.</li></ul><strong>If you choose 'Sort Descending'</strong><ul><li>Sort Descending: Specify the comma-separated fields to be used for descending sorting.</li></ul></td></tr></td></tr>
+<tr><td>Limit<br></td><td>Specifies how many records to omit before returning data. Should be paired with the "Limit" parameter for pagination.<br>
 </td></tr><tr><td>Offset<br></td><td>Specifies how many records to omit before returning data. Should be paired with the "Limit" parameter for pagination.<br>
 </td></tr></tbody></table>
 
 #### Output
 
 The output contains the following populated JSON schema:
+
 ```
 {
     "success": "",
@@ -301,7 +304,7 @@ The output contains the following populated JSON schema:
 }
 ```
 
-### operation: Get Classification Values Advanced Search
+### operation: Advanced Search for Classification Values
 
 #### Input parameters
 
@@ -317,6 +320,7 @@ The output contains the following populated JSON schema:
 #### Output
 
 The output contains the following populated JSON schema:
+
 ```
 {
     "success": "",
@@ -351,6 +355,7 @@ The output contains the following populated JSON schema:
 #### Output
 
 The output contains the following populated JSON schema:
+
 ```
 {
     "success": "",
@@ -382,6 +387,7 @@ The output contains the following populated JSON schema:
 #### Output
 
 The output contains the following populated JSON schema:
+
 ```
 {
     "success": "",
@@ -406,6 +412,7 @@ The output contains the following populated JSON schema:
 #### Output
 
 The output contains the following populated JSON schema:
+
 ```
 {
     "success": "",
@@ -426,15 +433,16 @@ The output contains the following populated JSON schema:
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Object Identifier (OID)<br></td><td>Specify the object identifier to retrieve object attachments from Alloy Navigator Express. Object identifier (e.g., T000027 for incidents, or GUID like {6D978EE7-...})<br>
 </td></tr><tr><td>Fields<br></td><td>Specify a comma-separated list of attachment field names to include in the output. If omitted, all available fields will be returned. For e.g. ID,Name,Created_Date.<br>
 </td></tr><tr><td>Filters<br></td><td>Provide additional filtering criteria as a JSON object to refine the object attachment. For e.g., {"Type":"File"})<br>
-</td></tr><tr><td>Sort Ascending<br></td><td>Specify the comma-separated fields to be used for ascending sorting. Only one sorting direction is permitted, either "Sort Ascending" or "Sort Descending" parameter.<br>
-</td></tr><tr><td>Sort Descending<br></td><td>Specify the comma-separated fields to be used for descending sorting. Only one sorting direction is permitted, either "Sort Ascending" or "Sort Descending" parameter.<br>
-</td></tr><tr><td>Limit<br></td><td>Specifies how many records to omit before returning data. Should be paired with the "Limit" parameter for pagination.<br>
+</td></tr><tr><td>Sort By<br></td><td>Select the sorting direction. You may use only one parameter either "Sort Ascending" or "Sort Descending" parameter.<br>
+<strong>If you choose 'Sort Ascending'</strong><ul><li>Sort Ascending: Specify the comma-separated fields to be used for ascending sorting.</li></ul><strong>If you choose 'Sort Descending'</strong><ul><li>Sort Descending: Specify the comma-separated fields to be used for descending sorting.</li></ul></td></tr></td></tr>
+<tr><td>Limit<br></td><td>Specifies how many records to omit before returning data. Should be paired with the "Limit" parameter for pagination.<br>
 </td></tr><tr><td>Offset<br></td><td>Specifies how many records to omit before returning data. Should be paired with the "Limit" parameter for pagination.<br>
 </td></tr></tbody></table>
 
 #### Output
 
 The output contains the following populated JSON schema:
+
 ```
 {
     "success": "",
@@ -464,6 +472,7 @@ The output contains the following populated JSON schema:
 #### Output
 
 The output contains the following populated JSON schema:
+
 ```
 {
     "success": "",
@@ -492,6 +501,7 @@ The output contains the following populated JSON schema:
 #### Output
 
 The output contains the following populated JSON schema:
+
 ```
 {
     "success": "",
@@ -539,6 +549,7 @@ The output contains a non-dictionary value.
 #### Output
 
 The output contains the following populated JSON schema:
+
 ```
 {
     "success": "",
@@ -560,12 +571,13 @@ The output contains the following populated JSON schema:
 #### Output
 
 The output contains the following populated JSON schema:
+
 ```
 {
-  "success": "",
-  "errorCode": "",
-  "errorText": "",
-  "message": ""
+    "success": "",
+    "errorCode": "",
+    "errorText": "",
+    "message": ""
 }
 ```
 
@@ -576,15 +588,15 @@ contain steps using which you can perform all supported actions. You can see bun
 *Playbooks** section in FortiSOAR&trade; after importing the Alloy ITSM connector.
 
 - Add Attachments
+- Advanced Search for Classification Values
+- Advanced Search for Object Activities
 - Check Step Action Availability
 - Create Object
 - Download Attachment
 - Get Attachment Content
 - Get Classification Values
-- Advanced Search for Classification Values
 - Get Current User Profile
 - Get Object Activities
-- Advanced Search for Object Activities
 - Get Object By ID
 - Get Objects
 - Get Objects Advanced Search
@@ -593,11 +605,11 @@ contain steps using which you can perform all supported actions. You can see bun
 - Update Attachment Description
 - Update Object
 
-
-____
-**NOTE**
+----
+**Note**: 
 
 If you are planning to use any of the sample playbooks in your environment, ensure that you clone those
 playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector
 upgrade and delete.
-____
+
+----

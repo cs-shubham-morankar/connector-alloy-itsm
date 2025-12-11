@@ -193,11 +193,11 @@
           "visible": true,
           "editable": true,
           "tooltip": "Select the sorting direction. You may use only one parameter either \"Sort Ascending\" or \"Sort Descending\" parameter.",
-          "select": [
+          "options": [
             "Sort Ascending",
             "Sort Descending"
           ],
-          "options": {
+          "onchange": {
             "Sort Ascending": [
               {
                 "title": "Sort Ascending",
@@ -436,11 +436,11 @@
           "visible": true,
           "editable": true,
           "tooltip": "Select the sorting direction. You may use only one parameter either \"Sort Ascending\" or \"Sort Descending\" parameter.",
-          "select": [
+          "options": [
             "Sort Ascending",
             "Sort Descending"
           ],
-          "options": {
+          "onchange": {
             "Sort Ascending": [
               {
                 "title": "Sort Ascending",
@@ -647,11 +647,11 @@
           "visible": true,
           "editable": true,
           "tooltip": "Select the sorting direction. You may use only one parameter either \"Sort Ascending\" or \"Sort Descending\" parameter.",
-          "select": [
+          "options": [
             "Sort Ascending",
             "Sort Descending"
           ],
-          "options": {
+          "onchange": {
             "Sort Ascending": [
               {
                 "title": "Sort Ascending",
@@ -1128,11 +1128,11 @@
           "visible": true,
           "editable": true,
           "tooltip": "Select the sorting direction. You may use only one parameter either \"Sort Ascending\" or \"Sort Descending\" parameter.",
-          "select": [
+          "options": [
             "Sort Ascending",
             "Sort Descending"
           ],
-          "options": {
+          "onchange": {
             "Sort Ascending": [
               {
                 "title": "Sort Ascending",
