@@ -16,7 +16,7 @@ Certified: No
 
 ## Installing the connector
 
-<p>Use the <strong>Connector Store</strong> to install the connector. For the detailed procedure to install a connector, click <a href="https://docs.fortinet.com/document/fortisoar/0.0.0/installing-a-connector/1/installing-a-connector" target="_top">here</a>.<br>You can also use the following <code>yum</code> command user to install connectors from an SSH session:</p>
+<p>Use the <strong>Connector Store</strong> to install the connector. For the detailed procedure to install a connector, click <a href="https://docs.fortinet.com/document/fortisoar/0.0.0/installing-a-connector/1/installing-a-connector" target="_top">here</a>.<br>You can also use the following <code>yum</code> command to install connectors from an SSH session:</p>
 
 ```
 sudo yum install cyops-connector-alloy-itsm
@@ -583,9 +583,8 @@ The output contains the following populated JSON schema:
 
 ## Included playbooks
 
-The `Sample - Alloy ITSM - 1.0.0` playbook collection comes bundled with the Alloy ITSM connector. These playbooks
-contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > *
-*Playbooks** section in FortiSOAR&trade; after importing the Alloy ITSM connector.
+The *`Sample - Alloy ITSM - 1.0.0`* playbook collection comes bundled with the Alloy ITSM connector. These playbooks
+contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR&trade; after importing the Alloy ITSM connector.
 
 - Add Attachments
 - Advanced Search for Classification Values
